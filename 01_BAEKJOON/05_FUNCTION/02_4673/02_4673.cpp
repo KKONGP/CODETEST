@@ -8,6 +8,11 @@ int series_Kaprekar(int number);
 
 int main()
 {
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     const int   MAX_NUM = 10000;
     int         nNum_Kaprekar(0);
     bool        nNum_self[MAX_NUM+1] = { false, };
@@ -34,9 +39,6 @@ int main()
             cout << i << '\n';
         }
     }
-
-
-
 
     return 0;
 }

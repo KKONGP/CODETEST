@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <String>
+#include <vector>
 
 using namespace std;
 
@@ -9,67 +9,43 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n(0), m(0);
-    string s;
+    int nInput1(0), nInput2(0);
+    int nTmp(0);
+    vector<vector<int>> v1, v2;
+    vector<int> vTmp;
 
-    cin >> n >> m;
-    for (int i = 0; i < n; i++)
+
+    cin >> nInput1 >> nInput2;
+    for (int i = 0; i < nInput1; i++)
     {
-        cin >> s;
+        for (int j = 0; j < nInput2; j++)
+        {
+            cin >> nTmp;
+            vTmp.push_back(nTmp);
+        }
+        v1.push_back(vTmp);
+        vTmp.clear();
     }
 
-    //int     nN(0), nM(0);
-    //int     nCnt(0);
-    //string  szNum;
-    //string  szTmp, szTmp_single;
+    for (int i = 0; i < nInput1; i++)
+    {
+        for (int j = 0; j < nInput2; j++)
+        {
+            cin >> nTmp;
+            vTmp.push_back(nTmp);
+        }
+        v2.push_back(vTmp);
+        vTmp.clear();
+    }
 
-    //cin >> nN >> nM;
-
-    //int** arr1 = new int* [nN];
-    //int** arr2 = new int* [nN];
-
-    //for (int i = 0; i < nN; i++)
-    //{
-    //    arr1[i] = new int[nM];
-    //    arr2[i] = new int[nM];
-    //}
-
-
-    //for (int i = 0; i < nN; i++)
-    //{
-    //    cin.ignore();
-    //    getline(cin, szTmp);
-    //    for (int j = 0; j < nM; j++)
-    //    {
-    //        for (int k = 0; k < szTmp.size(); k++)
-    //        {
-    //            szTmp_single = szTmp[k];
-    //            if (szTmp_single == " ")
-    //            {
-    //                arr1[i][nCnt] = stoi(szNum);
-    //                szNum.clear();
-    //                nCnt++;
-    //            }
-    //            else
-    //            {
-    //                szNum += szTmp[k];
-    //            }
-
-    //        }
-    //    }
-    //    
-
-    //}
-
-
-    //for (int i = 0; i < nN; i++)
-    //{
-    //    delete[] arr1[i];
-    //    delete[] arr2[i];
-    //}
-
-    //delete[] arr1;
-    //delete[] arr2;
+    for (int i = 0; i < nInput1; i++)
+    {
+        for (int j = 0; j < nInput2; j++)
+        {
+            cout << v1[i][j] + v2[i][j] << " ";
+        }
+        cout << '\n';
+    }
 
     return 0;
 }
